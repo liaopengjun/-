@@ -74,13 +74,17 @@ Page({
     var keys = ['id','name','main_img_url','price'];
     //取出商品所有的键
     for(var key in this.data.product){
+
       // 验证是否存在
       if(keys.indexOf(key)>=0){
           tempObj[key]=this.data.product[key];//将对应键值写入json对象中
       }
+      
     }
     cart.add(tempObj,this.data.productCount);//写入缓存
   },
+
+  //跳转到购物车
   onCartTap:function(event){
     wx.switchTab({
       url: '/pages/cart/cart',

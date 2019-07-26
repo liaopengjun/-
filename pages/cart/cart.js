@@ -81,8 +81,6 @@ Page({
     this.data.cartData[index].selectStatus = ! status;//改变勾选状态
     this._resetCartData();//重新刷新价格
 
-    
-
   },
 
   //全选
@@ -91,6 +89,7 @@ Page({
     var status=cart.getDateSet(event,'status')=='true';
     var data=this.data.cartData;
     var  len=data.length;
+    
     for(let i=0;i<len;i++) {
         data[i].selectStatus=!status;
     }
@@ -98,6 +97,7 @@ Page({
 
 
   },
+
   //加减购物车
   changeCounts:function(event){
 
@@ -137,7 +137,7 @@ Page({
   //获取商品下标
   _getProductIndexById:function(id){
 
-      var data = this.data.cartData;
+      var data = this.data.cartData;//购物车商品
       var len  = data.length;
       for(let i = 0; i < len; i++ ){
           if(data[i].id == id){
@@ -163,7 +163,7 @@ Page({
   //下单
   submitOrder:function(event){
     wx.navigateTo({
-      url: '../order/order?account=' + this.data.account+'&from=cart',
+      url: '../order/order?account=' + this.data.account +'&from=cart',
     })  
   }
 

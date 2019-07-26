@@ -55,7 +55,7 @@ Page({
         currentMenuIndex:index,
       });
 
-      //如果数据是第一次请求
+      //如果数据是否第一次请求
       if(!this.isLoadedData(index)) {
         var that=this;
         category.getProductByCategory(id, (data)=> {
